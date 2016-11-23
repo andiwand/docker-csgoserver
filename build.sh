@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --no-cache --pull -t "andiwand/csgoserver" .
+docker build --build-arg UPDATE=1 --pull -t "andiwand/csgoserver" .
