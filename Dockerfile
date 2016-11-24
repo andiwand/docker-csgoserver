@@ -1,7 +1,10 @@
 FROM andiwand/steamcmd
 
-ENV CSGO_HOME "/var/lib/csgo"
-ENV CSGO_CONFIG "${CSGO_HOME}/csgo/cfg"
+ARG CSGO_HOME="/usr/local/csgo"
+ARG CSGO_CONFIG="${CSGO_HOME}/csgo/cfg"
+
+ENV CSGO_HOME="${CSGO_HOME}"
+ENV CSGO_CONFIG="${CSGO_CONFIG}"
 
 ADD entryscript.sh "${CSGO_HOME}/entryscript.sh"
 
@@ -15,9 +18,7 @@ USER csgo
 
 EXPOSE 27015
 
-VOLUME "${STEAM_HOME}"
-VOLUME "${CSGO_HOME}"
-VOLUME "${CSGO_CONFIG}"
+VOLUME [ "${STEAM_HOME}", "${CSGO_HOME}", "${CSGO_CONFIG}" ]
 
 WORKDIR "${CSGO_HOME}"
 
