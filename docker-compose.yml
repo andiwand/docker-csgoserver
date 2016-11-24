@@ -2,16 +2,20 @@ version: '2'
 
 services:
   csgoserver:
+    container_name: csgoserver
     image: andiwand/csgoserver
     restart: always
     ports:
       - "27015:27015"
     volumes:
-      - binary:/var/lib/steam
-      - config:/var/lib/steam/csgo/cfg
+      - steam-bin:/var/lib/steam
+      - csgo-bin:/var/lib/csgo
+      - csgo-cfg:/var/lib/csgo/csgo/cfg
 
 volumes:
-  binary:
+  steam-bin:
     external: false
-  config:
+  csgo-bin:
+    external: false
+  csgo-cfg:
     external: false
