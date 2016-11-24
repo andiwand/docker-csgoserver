@@ -3,7 +3,7 @@ version: '2'
 services:
   csgoserver:
     build: .
-     image: andiwand/csgoserver
+    image: andiwand/csgoserver
     container_name: csgoserver
     restart: always
     ports:
