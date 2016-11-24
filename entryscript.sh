@@ -5,4 +5,4 @@
     +app_update 740 validate \
     +quit
 
-./srcds_run -game csgo $*
+csgo/srcds_run -game csgo $*
